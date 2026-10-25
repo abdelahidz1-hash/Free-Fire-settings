@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRAFTLAND FF  </title>
+    <title>FREE FIRE SENSITIVITY</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,36 +36,29 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .apps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
         
-        /* تعديلات تصميم الكارد لتشبه واجهة اللعبة */
-        .app-card { background: #121212; border: 2px solid #2a2a2a; border-radius: 12px; padding: 10px; display: flex; flex-direction: column; transition: 0.2s; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); }
+        /* تصميم الكارد الخاص بالحساسية */
+        .app-card { background: #121212; border: 2px solid #2a2a2a; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; transition: 0.2s; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); }
         .app-icon { width: 100%; height: auto; position: relative; background: #1a1a1a; border-radius: 8px; overflow: hidden; margin-bottom: 10px; }
-        .app-icon img { width: 100%; height: auto; object-fit: cover; display: block; }
+        .app-icon img { width: 100%; height: 140px; object-fit: cover; display: block; }
         
-        /* شريط المعلومات فوق وتحت الصورة مثل اللعبة */
-        .game-badge { position: absolute; top: 10px; right: 10px; background: #00875a; color: #fff; font-size: 0.75rem; padding: 3px 10px; border-radius: 4px; font-weight: bold; display: none; }
-        .game-info-overlay { background: transparent; border: none; border-radius: 0; padding: 0 0 8px 0; margin-bottom: 10px; display: flex; flex-direction: column; gap: 4px; }
-        .game-title-row { font-size: 1rem; font-weight: 300; color: #fff; text-align: right; }
-        .player-id-row { font-size: 0.75rem; color: #ffffff; text-align: right; font-weight: 300; display: flex; align-items: center; justify-content: flex-end; gap: 6px; }
-        .player-id-copy { width: 14px; height: 14px; cursor: pointer; filter: invert(1); transition: transform 0.2s ease; display: inline-block; vertical-align: middle; }
-        .player-id-copy:active { transform: scale(0.9); }
-        .game-sub-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: #aaa; }
-        .game-stats { display: flex; align-items: center; gap: 5px; color: #ff7700; font-weight: bold; display: none; }
+        .game-info-overlay { background: transparent; border: none; border-radius: 0; padding: 0 0 8px 0; margin-bottom: 6px; display: flex; flex-direction: column; gap: 4px; }
+        .game-title-row { font-size: 1rem; font-weight: bold; color: #fff; text-align: right; }
+        .app-description { font-size: 0.75rem; color: #aaa; margin-bottom: 8px; text-align: right; }
+        
+        /* جدول عرض الحساسية داخل الكارد */
+        .sensitivity-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; margin-bottom: 10px; font-size: 0.8rem; background: #181818; padding: 10px; border-radius: 8px; border: 1px solid #222; }
+        .sensitivity-item { color: #ccc; display: flex; justify-content: space-between; }
+        .sensitivity-value { color: #ffd700; font-weight: bold; }
+        .dpi-item { grid-column: span 2; display: flex; justify-content: space-between; border-top: 1px solid #282828; padding-top: 4px; margin-top: 2px; }
+        .dpi-value { color: #ff4500; font-weight: bold; }
 
-        .app-details h3 { display: none; }
-        .app-description { font-size: 0.8rem; color: #aaa; margin-bottom: 10px; text-align: right; }
-        
-        .progress-box { width: 100%; margin-bottom: 10px; display: none; }
-        .progress-bar-bg { width: 100%; height: 6px; background: #222; border-radius: 3px; overflow: hidden; }
-        .progress-fill { height: 100%; background: #ff4500; width: 0%; border-radius: 3px; transition: width 0.1s; }
-        
-        .cod-container { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; color: #ffffff; font-weight: bold; font-size: 0.85rem; background: #000; padding: 8px 12px; border-radius: 8px; border: 1px solid #333; }
+        .cod-container { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; color: #ffffff; font-weight: bold; font-size: 0.8rem; background: #000; padding: 8px 12px; border-radius: 8px; border: 1px solid #333; }
         .copy-btn { width: 20px; height: 20px; cursor: pointer; filter: invert(1); transition: transform 0.2s ease; display: block; }
         .copy-btn:active { transform: scale(0.9); }
         .reactions-group { display: flex; align-items: center; gap: 12px; }
         .like-btn, .dislike-btn { background: transparent; border: none; cursor: pointer; display: flex; align-items: center; gap: 4px; color: #fff; font-size: 0.85rem; transition: transform 0.2s ease; }
         .like-btn:active, .dislike-btn:active { transform: scale(0.9); }
-        .like-btn img, .dislike-btn img { width: 20px; height: 20px; object-fit: contain; }
-        .btn-download { display: none; }
+        .like-btn img, .dislike-btn img { width: 18px; height: 18px; object-fit: contain; }
         .update-notice { text-align: center; font-size: 1.1rem; margin-top: 30px; color: #fff; text-shadow: 0 0 10px #ff4500; }
     </style>
 </head>
@@ -79,40 +72,27 @@
                     <img src="https://i.ibb.co/RTTzmNJc/Picsart-26-05-31-10-21-22-114.png" style="width: 50px;">
                     <img src="https://i.ibb.co/WWTn1304/Picsart-26-05-28-22-27-13-388.png" style="width: 50px;">
                 </center>
-                هل تبحث عن أفضل خرائط وتصاميم كرافتلاند المميزة لحسابك في Free Fire؟ أهلاً بك في منصتك الموثوقة.<br><br>
-                نقدم لك في CRAFTLAND FREE FIRE مجموعة مختارة من الخرائط والتصاميم التي تم اختبارها بعناية لتضمن لك:<br>
-                <img src="https://images.icon-icons.com/1206/PNG/96/1491254409-truecheckacceptapprove_82933.png" class="check-icon"> <b>أمان عالٍ:</b> خرائط وتصاميم آمنة ومجربة.<br>
-                <img src="https://images.icon-icons.com/4089/PNG/96/money_education_laboratory_planet_finance_launch_missile_startup_spaceship_business_science_astronomy_spacecraft_space_rocket_icon_259588.png" class="rocket-icon"> <b>تجربة سلسة:</b> خرائط خفيفة وسريعة التحميل.<br>
-                <img src="https://images.icon-icons.com/1206/PNG/96/1491254409-truecheckacceptapprove_82933.png" class="check-icon"> <b>مضمونة:</b> نحن نهتم بتجربة لعب ممتعة ومميزة.<br><br>
-                <img src="https://images.icon-icons.com/2941/PNG/96/danger_triangle_icon_183758.png" class="danger-icon"> <b>نصيحة:</b> انسخ الكود واستخدمه مباشرة في قسم الكرافتلاند.<br>
+                هل تبحث عن أفضل إعدادات حساسية وهيدشوت لفري فاير لحسابك؟ أهلاً بك في منصتك الموثوقة.<br><br>
+                نقدم لك مجموعة مختارة من إعدادات الحساسية التي تم اختبارها بعناية لضمان ثبات السلاح وسرعة الهيدشوت:<br>
+                <img src="https://images.icon-icons.com/1206/PNG/96/1491254409-truecheckacceptapprove_82933.png" class="check-icon"> <b>دقة عالية:</b> إعدادات مخصصة لرفع النسبة.<br>
+                <img src="https://images.icon-icons.com/4089/PNG/96/money_education_laboratory_planet_finance_launch_missile_startup_spaceship_business_science_astronomy_spacecraft_space_rocket_icon_259588.png" class="rocket-icon"> <b>سرعة استجابة:</b> إعدادات خفيفة ومناسبة لمختلف الهواتف.<br><br>
+                <img src="https://images.icon-icons.com/2941/PNG/96/danger_triangle_icon_183758.png" class="danger-icon"> <b>نصيحة:</b> انسخ الإعدادات وطبقها بدقة في لعبة Free Fire.<br>
             </div>
             <button class="start-btn" onclick="document.getElementById('welcome-screen').style.display='none'">
-                <img src="https://i.ibb.co/Zp089yRX/images-1.jpg" style="width: 37px; height: auto; display: block; border-radius: 4px;">
+                <img src="https://raw.githubusercontent.com/0xme/ff-resources/refs/heads/main/pngs/300x300/icon_killed_2.png" style="width: 37px; height: auto; display: block; border-radius: 4px;">
             </button>
         </div>
     </div>
 
     <header>
         <h1>
-            CRAFTLAND 
-            <img src="https://i.ibb.co/Zp089yRX/images-1.jpg" width="19" height="19" alt="icon">
+            FREE FIRE SENSITIVITY 
+            <img src="https://raw.githubusercontent.com/0xme/ff-resources/refs/heads/main/pngs/300x300/icon_killed_2.png" width="19" height="19" alt="icon">
         </h1>
     </header>
 
     <div class="controls">
-        <input type="text" id="search-input" placeholder="ابحث عن خريطة أو تصميم كرافتلاند..." onkeyup="filterContent()">
-        
-        <!-- أزرار التصنيفات (Tabs) -->
-        <div class="categories-tabs">
-            <button class="cat-btn active" onclick="filterByCategory('all', this)">الكل</button>
-            <button class="cat-btn" onclick="filterByCategory('2vs2', this)">2VS2</button>
-            <button class="cat-btn" onclick="filterByCategory('1vs1', this)">1VS1</button>
-            <button class="cat-btn" onclick="filterByCategory('باركور', this)">باركور</button>
-            <button class="cat-btn" onclick="filterByCategory('تدريب', this)">تدريب</button>
-            <button class="cat-btn" onclick="filterByCategory('4vs4', this)">4VS4</button>
-            <button class="cat-btn" onclick="filterByCategory('clash squad', this)">Clash Squad</button>
-            <button class="cat-btn" onclick="filterByCategory('bermuda', this)">Bermuda</button>
-        </div>
+        <input type="text" id="search-input" placeholder="ابحث عن إعدادات حساسية، نوع هاتف، أو اسم..." onkeyup="filterContent()">
     </div>
 
     <div class="container">
@@ -127,8 +107,6 @@
         const checkCopyIcon = "https://images.icon-icons.com/1206/PNG/96/1491254409-truecheckacceptapprove_82933.png";
         
         const likeIconUrl = "https://emojigraph.org/media/144/apple/smiling-face-with-heart-eyes_1f60d.png";
-        
-        // تم تحديث رابط صورة عدم الإعجاب هنا بالرابط المطلوب
         const dislikeIconUrl = "https://emojigraph.org/media/144/apple/face-vomiting_1f92e.png";
 
         fetch('items.json')
@@ -144,40 +122,47 @@
             container.innerHTML = '';
             items.forEach((app, index) => {
                 const uniqueKey = app.id || `item_${index}`;
-                const playerId = app.player_id || app.playerId || "";
+                
+                // تجهيز نص الكود للنسخ التلقائي في حال عدم وجود حقل code مخصص
+                const fullCopyText = app.code || `العام: ${app.general || '0'} | نقطة حمراء: ${app.red_dot || '0'} | سكوب 2: ${app.scope_2 || '0'} | سكوب 4: ${app.scope_4 || '0'} | قنص: ${app.awm || '0'} | نظر حر: ${app.free_look || '0'}${app.dpi ? ' | DPI: ' + app.dpi : ''}`;
 
                 container.innerHTML += `
                 <div class="app-card" id="card-${index}">
                     <div class="app-icon">
-                        <div class="game-badge"></div>
-                        <img src="${app.icon}" alt="">
+                        <img src="${app.icon || 'https://i.ibb.co/MDrvqgCc/Picsart-26-05-28-22-03-09-928.png'}" alt="">
                     </div>
                     
                     <div class="game-info-overlay">
                         <div class="game-title-row">${app.name}</div>
-                        ${playerId ? `<div class="player-id-row">ID: ${playerId} <img src="${originalCopyIcon}" class="player-id-copy" id="player-copy-icon-${index}" onclick="copyToClipboard('${playerId}', 'player-copy-icon-${index}')" title="نسخ الآيدي"></div>` : ''}
+                        ${app.description ? `<p class="app-description">${app.description}</p>` : ''}
                     </div>
 
-                    ${app.description ? `<p class="app-description">${app.description}</p>` : ''}
-
-                    <div class="progress-box" id="progress-box-${index}">
-                        <div class="progress-bar-bg"><div class="progress-fill" id="bar-${index}"></div></div>
+                    <div class="sensitivity-grid">
+                        <div class="sensitivity-item">العام: <span class="sensitivity-value">${app.general || '-'}</span></div>
+                        <div class="sensitivity-item">نقطة حمراء: <span class="sensitivity-value">${app.red_dot || '-'}</span></div>
+                        <div class="sensitivity-item">سكوب 2: <span class="sensitivity-value">${app.scope_2 || '-'}</span></div>
+                        <div class="sensitivity-item">سكوب 4: <span class="sensitivity-value">${app.scope_4 || '-'}</span></div>
+                        <div class="sensitivity-item">قنص AWM: <span class="sensitivity-value">${app.awm || '-'}</span></div>
+                        <div class="sensitivity-item">نظر حر: <span class="sensitivity-value">${app.free_look || '-'}</span></div>
+                        ${app.dpi ? `<div class="dpi-item">معدل DPI: <span class="dpi-value">${app.dpi}</span></div>` : ''}
                     </div>
 
-                    ${app.code ? `
                     <div class="cod-container">
-                        <img src="${originalCopyIcon}" class="copy-btn" id="copy-icon-${index}" onclick="copyToClipboard('${app.code}', 'copy-icon-${index}')">
-                        <div class="reactions-group">
-                            <button class="like-btn" onclick="handleReaction('${uniqueKey}',${index}, 'likes')">
-                                <img src="${likeIconUrl}" alt="like">
-                                <span id="likes-count-${index}">0</span>
-                            </button>
-                            <button class="dislike-btn" onclick="handleReaction('${uniqueKey}',${index}, 'dislikes')">
-                                <img src="${dislikeIconUrl}" alt="dislike">
-                                <span id="dislikes-count-${index}">0</span>
-                            </button>
+                        <span style="font-size: 0.75rem; color: #aaa;">نسخ الإعدادات</span>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <img src="${originalCopyIcon}" class="copy-btn" id="copy-icon-${index}" onclick="copyToClipboard('${fullCopyText}', 'copy-icon-${index}')" title="نسخ الإعدادات">
+                            <div class="reactions-group">
+                                <button class="like-btn" onclick="handleReaction('${uniqueKey}',${index}, 'likes')">
+                                    <img src="${likeIconUrl}" alt="like">
+                                    <span id="likes-count-${index}">0</span>
+                                </button>
+                                <button class="dislike-btn" onclick="handleReaction('${uniqueKey}',${index}, 'dislikes')">
+                                    <img src="${dislikeIconUrl}" alt="dislike">
+                                    <span id="dislikes-count-${index}">0</span>
+                                </button>
+                            </div>
                         </div>
-                    </div>` : ''}
+                    </div>
                 </div>`;
             });
             fetchAllReactions();
@@ -203,8 +188,7 @@
                 const itemName = (item.name || "").toLowerCase();
                 const itemDesc = (item.description || "").toLowerCase();
                 const itemCat = (item.category || item.tag || item.link || "").toLowerCase();
-                const itemPlayerId = (item.player_id || item.playerId || "").toLowerCase();
-                const fullText = `${itemName} ${itemDesc} ${itemCat} ${itemPlayerId}`;
+                const fullText = `${itemName} ${itemDesc} ${itemCat}`;
 
                 const matchesSearch = fullText.includes(searchTerm);
 
@@ -263,7 +247,7 @@
             const today = new Date().toDateString();
 
             if (lastActionDate === today) {
-                alert("لقد قمت بالتفاعل مع هذا العنصر اليوم بالفعل. يمكنك التفاعل مرة أخرى غداً!");
+                alert("لقد قمت بالتفاعل لهذا العنصر اليوم بالفعل. يمكنك التفاعل مرة أخرى غداً!");
                 return;
             }
 

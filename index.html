@@ -38,8 +38,6 @@
         
         /* تصميم الكارد الخاص بالحساسية */
         .app-card { background: #121212; border: 2px solid #2a2a2a; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; transition: 0.2s; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); }
-        .app-icon { width: 100%; height: auto; position: relative; background: #1a1a1a; border-radius: 8px; overflow: hidden; margin-bottom: 10px; }
-        .app-icon img { width: 100%; height: 140px; object-fit: cover; display: block; }
         
         .game-info-overlay { background: transparent; border: none; border-radius: 0; padding: 0 0 8px 0; margin-bottom: 6px; display: flex; flex-direction: column; gap: 4px; }
         .game-title-row { font-size: 1rem; font-weight: bold; color: #fff; text-align: right; }
@@ -128,10 +126,6 @@
 
                 container.innerHTML += `
                 <div class="app-card" id="card-${index}">
-                    <div class="app-icon">
-                        <img src="${app.icon || 'https://i.ibb.co/MDrvqgCc/Picsart-26-05-28-22-03-09-928.png'}" alt="">
-                    </div>
-                    
                     <div class="game-info-overlay">
                         <div class="game-title-row">${app.name}</div>
                         ${app.description ? `<p class="app-description">${app.description}</p>` : ''}
